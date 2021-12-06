@@ -1,5 +1,5 @@
-# Elemento
-GTK theme for Budgie desktop
+# Linea
+GTK theme for Cinnamon desktop
 
 ## Requirments
 
