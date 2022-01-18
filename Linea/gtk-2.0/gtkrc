@@ -1,4 +1,4 @@
-gtk_color_scheme = "fg_color:#000\nbg_color:#eee\nbase_color:#fff\ntext_color:#000\nselected_bg_color:#3584e4\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\nborder_color:#aaa"
+gtk_color_scheme = "fg_color:#fff\nbg_color:#363636\nbase_color:#444\ntext_color:#fff\nselected_bg_color:#3584e4\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\nborder_color:#555"
 
 style "default"
 {
@@ -59,7 +59,7 @@ style "default"
 	
 	engine "murrine" 
 {
-	contrast = 1.0
+	contrast = 0.0
 	arrowstyle = 2 #to draw filled arrows.
 	glazestyle          = 0     # 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
 	gradient_shades     = {1.0, 1.0, 1.0, 1.0} # default: {1.1,1.0,1.0,1.1}
@@ -83,7 +83,7 @@ style "entry"
 	xthickness = 4
 	ythickness = 4
 
-	engine "murrine" {border_colors = {@border_color, @border_color}}
+	engine "murrine" {border_shades = { 1.5, 1.5 }}
 }
 
 style "button"
@@ -91,7 +91,7 @@ style "button"
 	xthickness = 4
 	ythickness = 4
 
-	engine "murrine" { roundness = 3 }
+	engine "murrine" { roundness = 3 	border_shades = { 1.5, 1.5 } }
 
 	bg[NORMAL] =  @bg_color
 	bg[PRELIGHT] = @bg_color
@@ -112,6 +112,8 @@ style "progressbar"
 	xthickness = 0
 	ythickness = 0
 	
+	engine "murrine" {}
+	
 	fg[PRELIGHT] = @selected_fg_color
 }
 
@@ -121,7 +123,7 @@ style "scale"
 	GtkScale       ::slider-length = 14
 	GtkScale		    ::trough-side-details = 1
 	
-	engine "murrine" {roundness = 4 }
+	engine "murrine" {roundness = 4 	border_shades = { 1.5, 1.5 }}
 	
 	bg[NORMAL] = @base_color
 	bg[PRELIGHT] = @base_color
@@ -185,7 +187,7 @@ style "toolbar"
 
 style "scrollbar" 
 {
-	engine "murrine" { contrast = 0.0 	border_shades = { 0.7, 0.7 } gradient_shades = {1.0, 1.0, 1.0, 1.0} }
+	engine "murrine" {	border_shades = { 1.65, 1.65 } gradient_shades     = {1.0, 1.0, 1.0, 1.0} }
 	bg[SELECTED] = mix(0.5,@fg_color, @base_color)
 }
 
